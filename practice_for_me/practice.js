@@ -21,6 +21,8 @@
 // throw error and throw new error 
 // rest operator and nullish operator
 
+// https://chatgpt.com/share/696cf5ee-579c-800b-8d74-402fe0c8bd3e
+
 
 
 // greeetUser
