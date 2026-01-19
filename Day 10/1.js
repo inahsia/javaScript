@@ -323,3 +323,244 @@ JSON.parse()
 const user = { name: "Aman", age: 22 };
 
 const updated = { ...user, age: 23 };
+------------------------------------------------------------------------------
+// for my practice 
+
+function greetUser(name,callback){
+  console.log(`hello ${name}`);
+  callback();
+
+}
+function afterGreeting(){
+  console.log("Greeting completed");
+
+}
+
+greetUser("aishani",afterGreeting);
+
+------------------------------------------------------------------------------
+function fetchData(callback){
+  setTimeout(()=>{
+    console.log("Data fetched");
+    callback();
+  })
+}
+function processData(){
+  console.log("processing data");
+}
+fetchData(processData);
+
+------------------------------------------------------------------------------
+function fetchDataPromise(){
+  return new Promise ((resolve,reject)=>{
+    setTimeout(()=>{
+      success=true;
+      if (success===true){
+        resolve("lessgo");
+      }
+      else{
+        reject("loser");
+      }
+    },4000);
+  })
+}
+
+fetchDataPromise()
+.then((num)=>{
+  console.log("worked",num);
+})
+.catch((error)=>{
+  console.log(error);
+})
+
+------------------------------------------------------------------------------
+async function getData(){
+  try {
+    const a=await fetchDataPromise();
+    console.log(a);
+
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+getData();
+------------------------------------------------------------------------------
+function fetchUser(){
+  return new Promise ((resolve,reject)=>{
+    setTimeout(()=>{
+        m="will this going to work";
+      resolve(m);
+        
+    },1000);
+  })
+}
+
+function fetchPosts(){
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        m="will this going to work";
+      resolve(m);
+    },1000)
+  });
+}
+
+async function thepost(){
+  const a=await fetchUser();
+  console.log(a);
+  const b=await fetchPosts();
+  console.log(b)
+}
+thepost();
+------------------------------------------------------------------------------
+// I used nested callbacks, which creates a deeply nested structure.
+
+function fetchUser() {
+return new Promise((resolve,reject)=>{
+  setTimeout(() => {
+   
+    resolve("User Fetched");
+  }, 1000);
+})
+
+}
+
+function fetchPosts() {
+return new Promise((resolve,reject)=>{
+  setTimeout(() => {
+
+    resolve("Posts fetched");
+  }, 1000);
+})
+}
+
+function fetchComments() {
+return new Promise((resolve,reject)=>{
+  setTimeout(() => {
+
+    resolve("Comments fetched");
+  }, 1000);
+})
+}
+
+
+fetchUser(()=>{
+  fetchPosts(()=>{
+    fetchComments(()=>{
+      console.log("All data fetched");
+    })
+  })
+})
+
+fetchUser().then((user)=>{
+  console.log(user);
+  return fetchPosts();
+
+})
+.then((post)=>{
+  console.log(post);
+  return fetchComments()
+
+})
+
+.then((comments)=>{
+  console.log(comments);
+})
+.catch(error){
+  console.log(error);
+}
+
+------------------------------------------------------------------------------
+function add(a,b,callback){
+  setTimeout(()=>{
+    const m=a+b;
+    callback(m);
+  },1000);
+}
+
+function multiply(value,c,callback){
+  setTimeout(()=>{
+    const m=value*c;
+    callback(m);
+  },1000)
+}
+
+function subtract(value,d,callback){
+  setTimeout(()=>{
+    const m=value-d
+    callback(m);
+  },1000)
+}
+
+add(2,3,(sum)=>{
+  multiply(sum,2,(multi)=>{
+    subtract(multi,4,(sub)=>{
+      subtract(sub, 2, (m) => {
+          console.log(m);
+        });
+    })
+  })
+})
+
+------------------------------------------------------------------------------
+function add(a,b){
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve(a+b)
+    })
+  })
+}
+
+function multiply(result,c){
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(result*c);
+    },2000);
+  });
+}
+
+function subtract(result,d){
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(result-d);
+    },3000);
+  });
+}
+
+add(100,200).then((sum)=>{
+  console.log(sum);
+  return multiply(sum,2)
+})
+.then((multi)=>{
+  console.log(multi);
+  return subtract(multi,3);
+})
+.then((prod)=>{
+ 
+  console.log(prod);
+})
+
+
+// async /await 
+async function calculator(){
+  try{
+    const sum =await add(1,2);
+    console.log(sum);
+    const prod=await multiply(sum,3)
+    console.log(prod);
+    const final_result=await subtract(prod,3);
+    console.log(final_result);
+
+ 
+ catch(error){
+  console.log(error);
+ } }
+}
+
+------------------------------------------------------------------------------
+function calculator(a,b,callback){
+  setTimeout(()=>{
+    callback(a,b);
+
+  },2000)
+}
