@@ -19,7 +19,7 @@ const nums=[10,20,30,40,50]
 numbers =(nums)=>{
   let sums=0;
   for (let i=0;i<=nums.length;i++){
-    sums+=nums[1]
+    sums+=nums[i]
 
   }
   console.log(sums)

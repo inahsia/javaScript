@@ -120,6 +120,8 @@ const users = [
 
 users.sort((a,b)=>a.age-b.age);
 
+user.sort((a,b)=>a.age-b.age);
+
 
 // splice()
 

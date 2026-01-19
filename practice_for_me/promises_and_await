@@ -1,0 +1,9 @@
+//practice of callback,promises, async/await
+function greetUser(name,callback){
+  console.log(`hello ${name}`);
+  callback();
+}
+function afterGreeting(){
+  console.log("Greetinng completed");
+}
+greetUser("aishani",afterGreeting);

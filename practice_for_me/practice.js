@@ -72,8 +72,8 @@ function fetchDataPromise(){
   })
 }
 fetchDataPromise()
-.then(()=>{
-  console.log("worked");
+.then((num)=>{
+  console.log("worked",num);
 })
 .catch((error)=>{
   console.log(error);
@@ -922,7 +922,8 @@ console.log(rest);
 // { age: 22, city: "Delhi" }
 
 // Error Handling
-try...catch...finallytry {
+// try...catch...finally
+try {
   let result = a + 10;
 } catch (error) {
   console.log(error.message);
@@ -1003,7 +1004,7 @@ Handles async tasks like:
 
 setTimeout
 
-DOM events
+DOM events  
 
 Fetch / APIs
 
