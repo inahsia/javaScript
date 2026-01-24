@@ -1,5 +1,4 @@
-// https://chatgpt.com/share/696b795d-9c78-800b-88dc-71244866e91e  promise chaining and all
-//https://chatgpt.com/share/696cc888-6700-800b-8c67-e47c9f7c7101   all the concepts mentioned below
+
 
 // event loops 
 // optional chainning 
@@ -21,7 +20,6 @@
 // throw error and throw new error 
 // rest operator and nullish operator
 
-// https://chatgpt.com/share/696cf5ee-579c-800b-8d74-402fe0c8bd3e
 
 
 
@@ -1098,3 +1096,8 @@ The event loop allows JavaScript to perform non-blocking asynchronous operations
 // const name="my name is aishani singh   ";
 // trimedName=name.trim().split(" ");
 // // trimedName.map(word=>word.charAt(0).toUpperCase()+word.slice(1)).join(" ");
+
+// error handling stuff
+ https://chatgpt.com/share/696e32a6-ae10-800a-8b20-8b2a6b09bf7f
+// -> too see this stuff
+// ->to Practice this stuff

@@ -1,0 +1,18 @@
+.ball{
+  background-color:lightblue;
+  border-radius:100%;
+  width: 300px;
+  height: 300px;
+  border: 2px solid;
+  
+}
+
+.ball1{
+  background-color:pink;
+  border:2px solid;
+  width: 300px;
+  height: 300px;
+}
+.main{
+  display: inline-block;
+}

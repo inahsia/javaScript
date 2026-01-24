@@ -1,0 +1,32 @@
+
+    div{
+   
+      width: 100px;
+      height: 100px;
+      background-color: lightpink;
+      border: 2px solid black;
+      display: inline-block;
+    }
+
+    #box1{
+      position: static;
+    }
+    #box2{
+      position: relative;
+      top:10px ;
+      left: 10px;
+      z-index:1;
+    }
+
+  #box3{
+    position:absolute;
+    top:20px
+
+  }
+  #box4{
+    position: fixed;
+  }
+  #box5{
+    position:sticky;
+    top:0px;
+  }

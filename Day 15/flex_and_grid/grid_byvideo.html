@@ -1,0 +1,40 @@
+<!-- https://css-tricks.com/snippets/css/a-guide-to-flexbox/ -->
+ <!-- https://css-tricks.com/css-grid-layout-guide/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  .item{
+    border:1px solid red;
+
+     margin: 10px;   
+
+  }
+  .container{
+    border: 1px solid;
+    display: grid;
+    grid-template-columns:repeat(12,1fr);
+    grid-template-rows:100px 100px ;
+    
+  }
+  
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item item-4">4</div>
+  <div class="item">5</div>
+    <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item item-4">4</div>
+  <div class="item">5</div>
+  </div>
+</body>
+</html>

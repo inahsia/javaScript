@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animations</title>
+  <style>
+    @keyframes myAnimation{
+      from{background-color: red;}
+      to {background-color: yellow;}
+       }
+    .box_1{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      animation-name: myAnimation;
+      animation-duration: 4s;
+    }
+   
+    @keyframes thisAnimations{
+      0% {background-color: red;}
+      25% {background-color: yellow;}
+      50% {background-color: blue;}
+      100% {background-color: green;}
+    
+    }
+      .box_2{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      animation-name: thisAnimations;
+      animation-duration: 4s;
+    }
+
+
+    @keyframes slideAnimation{
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+    }
+      .box_3{
+      width: 100px;
+      height: 100px;
+      position: relative;
+      background-color: red;
+      animation-name: slideAnimation;
+      animation-duration: 10s;
+      animation-delay: -2s;
+      /* animation-iteration-count: 3; */
+      /* or */
+      animation-iteration-count: infinite;
+      animation-direction:alternate;
+    }
+  </style>
+</head>
+<body>
+  <div class="box_1">
+
+  </div>
+  <br>
+  <div class="box_2">
+
+  </div>
+  <br>
+  <div class="box_3">
+(0,0) → (200,0)
+   ↓        ↓
+(0,200) ← (200,200)
+
+
+  </div>
+
+</body>
+</html>

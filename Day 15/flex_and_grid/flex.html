@@ -1,0 +1,70 @@
+we have 2 display methods
+one is grid and the other one is flex;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex_and_grid</title>
+  <style>
+    /* header{
+      display:flex;
+
+    }
+    /* then nth-child(3) is used to access the 3rd child of this whole  */
+    /* margin auto is basically for if margin-left is auto */
+    /* header{ 
+      display:grid;
+      grid-template-columns:repeat(10,1fr)
+    } 
+    header > div:nth-child(3){
+      grid-column:10;
+    } */
+    .container {
+        display: grid;    
+        /* grid-template-column and grid-template-row */
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 50px 350px  50px;
+    }
+    aside{
+      grid-column:span 2;
+    }
+    main{
+        grid-column: span 10;
+    }
+    footer {
+        grid-column: span 12;
+    }
+
+    header{
+      display:flex;
+       grid-column:span 12;
+       color: black;
+       
+    }
+
+    header> div:nth-child(3){
+      margin-left:auto;
+    }
+    .item{
+      margin:10px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header style="background-color: azure;">
+    <div class="item">HOME</div>
+    <div class="item">SEARCH</div>
+    <div class="item">LOGOUT</div>
+  </header>
+ 
+  <main style="background-color: bisque;">CONTENT</main>
+   <aside style="background-color: plum;">MENU</aside>
+  <footer style="background-color: blueviolet;">FOOTER</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!-- https://chatgpt.com/share/6971db0a-b900-800a-a65f-d8813c0fed4a -->
+ <!-- https://chatgpt.com/share/6971db2e-13f0-800a-b6df-a5d14b06eee5 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+  body{
+    text-align: center;
+      }
+  div{
+    height:50px;
+    width:150px;
+    display:inline-block;
+    border:2px solid black;
+
+  }
+  #container{
+    width:600px;
+    height:600px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+ 
+    /* display: flex; */
+    /* flex-direction:row; */
+    /* justify-content: flex-end; */
+    /* flex-wrap:wrap;
+    align-items: centre;
+    align-content: center; */
+    align-items: centre;
+    flex-wrap:wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex:0;
+  }
+
+  #box1{
+    background-color: aquamarine;
+    flex-shrink: 1;
+  }
+  #box2{
+    background-color: aqua;
+    height:100px;
+  }
+  #box3{
+    background-color: burlywood;
+  }
+  #box4{
+    background-color: blueviolet;
+  }
+  #box5{
+    background-color: green;
+  }
+    </style>
+  </head>
+  <body>
+    <h1>Flexbox Playground</h1>
+    <div id="container">
+    <div id="box1">box 1</div>
+    <div id="box2">box 2</div>
+    <div id="box3">box 3</div>
+    <div id="box4">box 4</div>
+    <div id="box5">box 5</div>
+    </div>
+  </body>
+  </html>
