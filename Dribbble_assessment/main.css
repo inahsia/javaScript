@@ -1,0 +1,244 @@
+
+.navbar-brand{
+    font-family: "Lobster Two", sans-serif;
+    transform:rotate(-5deg);
+    font-weight: 800;
+    font-style: italic;
+    margin-left:20px ;
+    margin-right:100px;
+    width:100px;
+    height: 60px;
+    margin-top:15px;  
+    letter-spacing: 2px;
+
+} 
+.navbar{
+  background-color: #fff;
+}
+
+
+.nav-item{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin:5px;
+  
+}
+
+.nav-item dropdown{
+  margin:50px;
+  font-weight:500px;
+
+}
+.nav-link{
+  color: black;
+}
+.d-flex{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-right:10px;
+}
+.bold-on{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 15px;
+  font-weight: 600;
+  font-size:14px;
+
+}
+.first-half{
+  margin-left: 2%;
+
+}
+
+.headline h1{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: left;
+  letter-spacing: 2px;
+  font-weight: 600;
+  width: 900px;
+  font-stretch: expanded;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
+.semi-headline h2{
+  font-size: 16px;
+  text-align: left;
+  font-weight: normal;
+}
+
+.buttons-headings{
+
+  text-align: left;
+}
+.search-bar{
+  margin-top:10px;
+  width: 100%;
+
+}
+.form-control{
+  border-radius: 30px;
+  height:60px;
+  border: 1px solid plum;
+}
+.search-button{ 
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  align-items:center;
+  margin-top: 10px;  
+  margin-left:-65px ;
+  background-color: palevioletred;
+  border: 0px solid white;
+}
+
+.heading-video-card{
+  position: relative;
+  width: 100%;
+  height: 400px;          
+  border-radius: 24px;
+  overflow: hidden;        
+}
+
+.heading-video-card video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+}
+.heading-video{
+  margin-top:25px;
+}
+.item-buttons{
+  margin-top: 15px;
+  text-align: left;
+}
+
+.popular-button{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  border-radius: 30px;
+  background-color: #fff;
+  border:1px #A9A9A9 solid;
+  transition: background-color 0.3s ease;
+}
+ .popular-button:hover{
+  background-color:#D3D3D3;
+  border:1px  solid;
+
+}
+
+.alert-link{
+  background-color: #f8f8fc;
+  width: 90%;
+  margin-left: 40px;
+  padding: 5px;
+  font-size: 15px;
+  
+}
+.lines{
+  font-weight: 400;
+}
+.popular-button-1{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  border-radius: 30px;
+  background-color: #fff;
+  border:1px #A9A9A9 solid;
+  font-weight: bold;
+
+
+}
+.popular-pink-design{
+  background-color: palevioletred;
+  border: 1px solid #fff ;
+  position: relative;
+  margin-left:-48.25% ;
+  margin-bottom: 3%;
+  height: 20px ;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 1px;
+  width:2.5%
+
+}
+.popular-pink-design:hover{
+  background-color: palevioletred;
+  border: 1px solid #fff ;
+  position: relative;
+  margin-left:-48.25% ;
+  margin-bottom: 3%;
+  height: 20px ;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 1px;
+  width:2.5%;
+}
+button-under-star .dropdown-toggle{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+   border: 1px solid #D3D3D3 ;
+   border-radius: 30px;
+   margin-right: 60px;
+}
+
+.filter-button{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-left: 80px;
+  border: 1px solid #D3D3D3 ;
+  border-radius: 30px;
+}
+.center{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-left: 2%;
+  border: 1px solid #D3D3D3 ;
+  border-radius: 30px;
+    font-size: 15px;
+  font-weight: 550;
+
+}
+.button-under-star{
+
+  margin-left: 2%;
+    font-size: 15px;
+  font-weight: 500;
+}
+
+.Card-Designs{
+  margin-top:20px ;
+}
+
+.text-center{
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+}
+
+.marker{
+  padding: 50px;
+  padding-bottom: 100px ;
+  overflow: hidden;
+  width: 100%;
+
+}
+
+.track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 10s linear infinite;
+}
+
+.track img {
+  width: 250px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.navbar-bottom{
+  margin-bottom:100px ;
+}

@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    
+<nav class="navbar fixed-top navbar-expand-lg bg-body-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Dribbble</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Explore
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item bold-on" href="#"><i style="margin-right:10px;" class="fa-solid fa-arrow-up-right-dots"></i>Product Design </a></li>
+            <li><a class="dropdown-item bold-on" href="#"><i  style="margin-right:10px;" class="fa-regular fa-star"></i>New and Noteworthy</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hire Talent
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Get Hired
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Community 
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="d-flex gap-2">
+        <input style="border-radius:50px; width: 88px; height:48px ;font-weight: 700; font-size: 14px;" class="btn btn-lg" type="button" value="Sign up">
+        <input style="border-radius:50px; width: 88px; height:48px ;font-weight: 700; font-size: 14px;" class="btn btn-dark" type="button" value="Log in">
+
+      </div>
+
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div style="margin-top:100px ;" class="container-fluid text-center ">
+  <div class="row heading-video">
+    <div class="col-6 first-half">
+      <div class="headline">
+      <h1>Discover the <br>
+        World’s  Top Designers</h1>
+      </div>
+      <div class="semi-headline">
+        <h2>Explore work from the most talented and accomplished <br> designers ready to take on your next project.</h2>
+      </div>
+      <div class="buttons-headings">
+        <button style="border-radius:50px; width: 100px; height:48px ;font-weight: 700; font-size: 14px;" class="btn btn-dark" type="submit"><i  style="margin-right:10px;" class="fa-solid fa-photo-film"></i>Shots</button>
+        <button style="border-radius:50px; width: 140px; height:48px ;font-weight: 700; font-size: 14px;" class="btn btn-lg" type="submit"><i style="margin-right:10px;" class="fa-solid fa-compass-drafting"></i>Designers</button>
+       <button style="border-radius:50px; width: 120px; height:48px ;font-weight: 700; font-size: 14px;" class="btn btn-lg" type="submit"><i style="margin-right:10px;" class="fa-solid fa-bell-concierge"></i>Services</button>
+      </div>
+      <div class="search-bar">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2"  type="search" placeholder="What type of design are you interested in?" aria-label="Search"  />
+        <button type="button" class="btn btn-danger search-button"><i style="padding-right:3px ;" class="fa-solid fa-magnifying-glass"></i></button>
+        
+      </form>
+      </div>
+
+      <div class="item-buttons">
+        <span style="font-weight:bold;">Popular:</span>
+        <button type="button" class="btn btn-lg popular-button">dashboard</button>
+        <button type="button" class="btn btn-lg popular-button">Landing page</button>
+        <button type="button" class="btn btn-lg popular-button">e-commerce</button>
+        <button type="button" class="btn btn-lg popular-button">logo</button>
+        <button type="button" class="btn btn-lg popular-button">card</button>
+        <button type="button" class="btn btn-lg popular-button">icons</button>
+      </div>
+      <div>
+
+      </div>
+
+    </div>
+
+    <div class="col-5 second-half">
+      <div class="card heading-video-card mb-3">
+        <video autoplay muted playsinline width="500" height="500" controls>
+          <source src="82228fe85ee27b02514d94f31a7361e6.mp4" type="video/mp4">
+          <source src="bf59b044b5cc033aa485f901803f5a9d.mp4" type="video/mp4">
+        </video>
+
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+      <div class="alert alert-lg alert-link" role="alert">
+        <button type="button" class="btn btn-lg popular-button-1"><i class="fa-solid fa-star" style="color: #B197FC; margin-right: 2px;"></i></i>Start a Project Brief</button> 
+        <span class="lines"> Tell us what you need and instantly connect with world-class talent ready to work on your project.</span>
+       <button type="button"  class="btn btn-dark popular-pink-design">new</button>       
+      </div>
+
+    <div class="button-under-star">
+        <button class="btn btn-lg dropdown-toggle"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Following 
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+
+      <button type="button" class="btn btn center">Discover</button>
+      <button type="button" class="btn btn center">Animation</button>
+      <button type="button" class="btn btn center">Branding</button>
+      <button type="button" class="btn btn center">Illustration</button>
+      <button type="button" class="btn btn center">Mobile</button>
+      <button type="button" class="btn btn center">Print</button>
+      <button type="button" class="btn btn center">Product Design</button>
+      <button type="button" class="btn btn center">Typography</button>
+      <button type="button" class="btn btn center">Web Design</button>
+      <button type="button" class="btn btn filter-button "><i class="fa-solid fa-filter"></i>Filter</button>
+      
+</div>
+
+
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3 g-4 Card-Designs">
+
+  <div class="col">
+    <div class="card">
+      <img  src="images\Design-cards\ba958841f8500b7d8b29d6d6cdcce13b.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\1146a499d5a9dd87f9690fa011f2ab73.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\ba958841f8500b7d8b29d6d6cdcce13b.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\797e77f19e5fc729eea46be38222f0f9.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+    <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\84063b96bb8983a3109b1981985365c2.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+    <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\c4c7a16702d30288516bfcfe9782454d.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+      <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\c4c7a16702d30288516bfcfe9782454d.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+      <div class="col">
+    <div class="card">
+             <video controls>
+          <source src="images\Design-cards\50cdeaf273abacc1186bbf2a1771cd92.mp4" type="video/mp4">
+          
+        </video>
+
+    </div>
+  </div>
+      <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\still-ef869ea4956bc297c4007f36834ee524.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+        <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\4a2d275a78e8411392fa665612fcc068.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+        <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\01a5eadb9f68f026037e1b6371605ced.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+        <div class="col">
+    <div class="card">
+      <img src="images\Design-cards\0fe57064987564868aa12825ab5314cb.webp" class="card-img-top" alt="...">
+
+    </div>
+  </div>
+</div>
+</div>
+<div class="text-center" style="margin-top: 20px; ">
+<button type="button" style=" background-color: black;color: #fff;  font-size: 500;
+  border-radius:30px ;" class="btn btn ">Sign up to continue</button>
+</div>
+</div>
+
+<div class="marker ">
+  <div class="track"> 
+    <img src="images\Shimmer-cards\390e010d2d59cba8e03a85bb5d7eb0b9.webp">
+    <img src="images\Shimmer-cards\c584e7158df748f31069a2ea0437bdf7.webp">
+    <img src="images\Shimmer-cards\original-4a364585d8c798c980f9a9c01c92e945.webp">
+    <img src="images\Shimmer-cards\original-89f6591f2e6436c0c05aa6addc02ff89.webp">
+    <img src="images\Shimmer-cards\still-cfc1804383dd4aa5a4b61b5341304c30.webp" alt="">
+    <img src="images\Shimmer-cards\390e010d2d59cba8e03a85bb5d7eb0b9.webp">
+    <img src="images\Shimmer-cards\c584e7158df748f31069a2ea0437bdf7.webp">
+    <img src="images\Shimmer-cards\original-4a364585d8c798c980f9a9c01c92e945.webp">
+    <img src="images\Shimmer-cards\original-89f6591f2e6436c0c05aa6addc02ff89.webp">
+    <img src="images\Shimmer-cards\still-cfc1804383dd4aa5a4b61b5341304c30.webp" alt="">
+  </div>
+</div>
+
+<nav class="navbar navbar-bottom  navbar-expand-lg bg-body-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="margin-left: 20%;" href="#">Dribbble</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            For designers
+          </a>
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hire Talent
+          </a>
+         
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Inspiration
+          </a>
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Advertising 
+          </a>
+         
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Blog
+          </a>
+         
+        </li>
+                <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About 
+          </a>
+         
+        </li>
+                        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Careers
+          </a>
+         
+        </li>
+            </li>
+           <li class="nav-item dropdown">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Support
+          </a>
+         
+        </li>
+
+      <li style="margin-top: 8px; margin-left: 10px;"><a href=""><i class="fa-brands fa-x-twitter"></i></a> <a href=""> <i class="fa-brands fa-facebook"></i></a> <a href=""><i class="fa-brands fa-instagram"></i></a><a href=""><i class="fa-brands fa-pinterest"></i></a></li>
+      </ul>
+      <div class="d-flex gap-2">
+
+
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<footer></footer>
+
+
+<div style="background-color: #0d0c22; color: #fff; padding-bottom: 0px; margin-bottom: 0px; height: 80px; border-radius: 0px ;  display: flex; justify-content: center; align-items: center;" class="alert fixed-bottom alert alert-dismissible fade show" role="alert">
+  <div class="text-center">
+  <strong>Get 20% (up to $100) off your first payment for design and development services on Dribbble! Use code WELCOME20 🎉</strong> 
+  <button style="border-radius: 30px; border: 1px solid white; font-size: 13px;">Get started</button>
+  <button type="button" class="btn-close btn-lg  cross" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7280687e90.js" crossorigin="anonymous"></script>
+  </body>
+</html>
