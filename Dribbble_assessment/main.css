@@ -139,7 +139,54 @@
 .lines{
   font-weight: 400;
 }
-.popular-button-1{
+
+.button-badge-wrapper{
+  position: relative;
+  display:inline-block;
+
+}
+.popular-button-1 {
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  border-radius: 30px;
+  background-color: #fff;
+  border: 1px #A9A9A9 solid;
+  font-weight: bold;
+}
+.popular-pink-design{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+
+  background-color: palevioletred;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .popular-button-1{
   font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   border-radius: 30px;
@@ -175,7 +222,7 @@
   border-radius: 30px;
   padding: 1px;
   width:2.5%;
-}
+} */
 button-under-star .dropdown-toggle{
   font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -240,5 +287,13 @@ button-under-star .dropdown-toggle{
 }
 
 .navbar-bottom{
-  margin-bottom:100px ;
+  margin-bottom:90px ;
+}
+
+.icons i{
+  color: black;
+  margin-left: 2px;
+}
+.footer-below span{
+  padding: 10px;
 }
