@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <style>
+    .grid-container {
+  display: grid;
+  gap: 1rem;   /* gap-3 in Bootstrap = 1rem */
+}
+
+    
+  </style>
+  <p class="d-none">You cant see me broo</p>
+  <p class="d-block">
+    I am visible
+  </p>
+
+  <div class="d-flex border ">
+    <div class="bg-primary text-white">Items 1</div>
+  
+  </div>
+  <div class="d-none d-md-block">visible </div>
+
+  <div class="grid-container">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  </div>
+
+  <div class="d-flex p-2">I'm a flexbox container!</div>
+
+
+  <div class="d-flex flex-row mb-3">
+      <div class="p-2">Flex item 1</div>
+      <div class="p-2">Flex item 2</div>
+      <div class="p-2">Flex item 3</div>
+  </div>
+  <div class="d-flex flex-row-reverse">
+  <div class="p-2">Flex item 1</div>
+  <div class="p-2">Flex item 2</div>
+  <div class="p-2">Flex item 3</div>
+</div>
+<div class="d-flex flex-column mb-3">
+  <div class="p-2">A</div>
+  <div class="p-2">B</div>
+  <div class="p-2">C</div>
+</div>
+<div class="d-flex flex-column-reverse">
+  <div class="p-2">A</div>
+  <div class="p-2">B</div>
+  <div class="p-2">C</div>
+</div>
+
+
+<div class="d-flex flex-align-items-center">
+  <div class="p-2">A</div>
+  <div class="p-2">B</div>
+  <div class="p-2">C</div>
+</div>
+<div class="d-flex align-items-stretch">
+  <div class="p-2">A</div>
+  <div class="p-2">B</div>
+  <div class="p-2">C</div>
+</div>
+
+<!-- we also got like .align-items-xxl-stretch -->
+
+
+
+<!-- justify-content-start -->
+ <div class="d-flex justify-content-start">...</div>
+
+ <!-- align-self-start -->
+
+ <!-- now we got fill -->
+<div class="d-flex">
+  <div class="p-2 flex-fill">Flex items</div>
+    <div class="p-2 flex-fill">Flex item with a lot of content</div>
+  <div class="p-2 flex-fill">Flex item</div>
+  <div class="p-2 flex-fill">Flex item</div>
+
+</div>
+
+
+<div class="d-flex align-item-start flex-column mb-3"></div>
+
+Class	Does what
+me-auto	Pushes following items right
+ms-auto	Pushes itself right
+<!-- mx-auto	Centers item -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html> 

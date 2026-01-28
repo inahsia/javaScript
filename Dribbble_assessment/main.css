@@ -223,13 +223,13 @@
   padding: 1px;
   width:2.5%;
 } */
-button-under-star .dropdown-toggle{
+.button-under-star .dropdown-toggle{
   font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 500;
    border: 1px solid #D3D3D3 ;
    border-radius: 30px;
-   margin-right: 60px;
+   margin-right: 20px;
 }
 
 .filter-button{
@@ -263,6 +263,7 @@ button-under-star .dropdown-toggle{
   
 }
 
+/* overflow: hidden cuts them off cleanly  */
 .marker{
   padding: 50px;
   padding-bottom: 100px ;
@@ -282,12 +283,19 @@ button-under-star .dropdown-toggle{
 }
 
 @keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from 
+  { transform: translateX(0); }
+
+  to 
+  { transform: translateX(-50%); }
 }
 
 .navbar-bottom{
   margin-bottom:90px ;
+}
+
+.icons{
+  margin-left:80px;
 }
 
 .icons i{
@@ -297,3 +305,26 @@ button-under-star .dropdown-toggle{
 .footer-below span{
   padding: 10px;
 }
+.badge{
+  background-color: #A9A9A9;
+  color: white;
+  font-weight: bold;
+  margin-left:5px;
+}
+
+.heart_eyes_icons{
+  margin-left:30px;
+}
+.fa-eye {
+  margin-left: 5px ;
+}
+
+.cross {
+  position: absolute;
+  top: 20%;
+  right: 20px;
+  transform: translateY(25%);
+  
+}
+
+
