@@ -161,21 +161,18 @@
 }
 
 .heading-video-card{
-  position: relative;
-  width: 100%;
-          
+  width: 100%;    
   border-radius: 24px;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .heading-video-card video {
-  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;  
 }
 .heading-video{
-  margin-top:25px;
+  margin-top:120px;
 }
 .item-buttons{
   margin-top: 15px;
@@ -550,3 +547,5 @@ video {
 .image-hover-wrapper:hover .image-hover-icons {
   opacity: 1;
 }
+
+
