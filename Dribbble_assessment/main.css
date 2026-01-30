@@ -545,7 +545,7 @@ video {
 
 .image-hover-wrapper:hover .image-hover-text,
 .image-hover-wrapper:hover .image-hover-icons {
-  opacity: 1;
+  opacity: 5;
 }
 
 
