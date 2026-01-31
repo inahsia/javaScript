@@ -10,10 +10,15 @@
     height: 60px;
     margin-top:15px;  
     letter-spacing: 2px;
-    
-
+  
 } 
 
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
 
 
 .search-bar {
@@ -246,6 +251,11 @@
   height: 350px;
   width: 450px;
 }
+.card-resize video{
+  height: 350px;
+  width: 450px;
+  background: #b197fc;
+}
 
 
 .heading-video-card {
@@ -303,6 +313,7 @@ video {
 
 .text-center{
   font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 40px;
   
   
 }
@@ -549,3 +560,94 @@ video {
 }
 
 
+/* footer has been done  */
+.site-footer {
+  background-color: #fff;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.footer-brand {
+    font-family: "Lobster Two", sans-serif;
+    transform:rotate(-5deg);
+    font-weight: 800;
+    font-style: italic;
+    margin-left:20px ;
+    margin-right:50px;
+    width:100px;
+    height: 60px;
+    margin-top:15px;  
+    letter-spacing: 2px;
+    color: #000;
+    
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #000;
+}
+
+.footer-social a {
+  color: #000;
+  margin-left: 14px;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.footer-social a:hover {
+  color: #000;
+}
+
+
+@media (max-width: 768px) {
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-social {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .footer-brand {
+    text-align: center;
+    margin-bottom: 10px;
+    
+  }
+}
+
+
+.card-body-inner {
+  display: flex;
+  align-items: center;
+}
+
+.heart_eyes_icons {
+  margin-left: auto;
+  color: darkgrey;
+  
+}
+.studio-name {
+  margin-left: 6px;
+  line-height: 1.2;
+}
+
+.card-body-inner{
+  margin-left: -15px;
+  width: 105%;
+}
