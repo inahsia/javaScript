@@ -17,7 +17,7 @@ let myUser:User={
 
 
 myUser.email="lol@gmail.com";
-myUser._id="this_is_the_concept_of_readonly";
+// myUser._id="this_is_the_concept_of_readonly";
 
 
 // if you want to include both returntypes
