@@ -22,7 +22,7 @@ interface Admin extends User{
 
 
 export{}
-const userVariable:Admin={
+const userVariable:User={
   dbid:22 ,email:"singhaisahni2003@gmail.com",UserId:2211,
   startTrail:()=>{
     return "you got this"
