@@ -1,34 +1,34 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <style>
-/* ===== Breaking Bad Color Scheme ===== */
+
 
 body {
-  background-color: #0b0f0c;   /* dark lab background */
-  color: #d8cda8;              /* dusty beige text */
+  background-color: #0b0f0c;  
+  color: #d8cda8;             
   font-family: "Alfa Slab One", serif;
 }
 
-/* Navbar */
+
 .bb-navbar {
   background: linear-gradient(90deg, #0f2419, #1c3a2b);
   border-bottom: 2px solid #b7ff00;
 }
 
-/* Headings */
+
 h1, h2, h5 {
   color: #b7ff00;
   text-shadow: 0 0 5px rgba(183,255,0,0.5);
 }
 
-/* Links */
+
 a {
   color: #b7ff00;
 }
@@ -37,7 +37,7 @@ a:hover {
   color: #ffffff;
 }
 
-/* Buttons */
+
 .btn-success {
   background-color: #1c3a2b;
   border-color: #b7ff00;
@@ -49,7 +49,7 @@ a:hover {
   color: #000;
 }
 
-/* Carousel cinematic tone */
+
 .carousel-inner img {
   filter: brightness(0.75) contrast(1.1);
 }
@@ -59,7 +59,7 @@ a:hover {
   border-radius: 10px;
 }
 
-/* Sections */
+
 .featurette-divider {
   border-color: #1c3a2b;
 }
@@ -69,13 +69,13 @@ a:hover {
   box-shadow: 0 0 20px rgba(183,255,0,0.3);
 }
 
-/* Jumbotron */
+
 .jumbotron {
   background: linear-gradient(135deg, #0f2419, #000);
   border: 2px solid #b7ff00;
 }
 
-/* Mute button */
+
 .mute-btn {
   background: #1c3a2b;
   border: 2px solid #b7ff00;
@@ -160,7 +160,7 @@ a:hover {
 </nav>
 
 
-<!-- carousel -->
+
  <div class="container-fluid">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -237,7 +237,7 @@ a:hover {
 
   <div class="row">
 
-    <!-- Column 1 -->
+    
 <div class="col-lg-4 text-center">
   <img
     src="walter white.jpg"
@@ -256,7 +256,7 @@ a:hover {
 </div>
 
 
-    <!-- Column 2 -->
+    
 <div class="col-lg-4 text-center">
   <img
     src="gustavo.jpg"
@@ -274,7 +274,7 @@ a:hover {
 
 </div>
 
-    <!-- Column 3 -->
+   
 <div class="col-lg-4 text-center">
   <img
     src="37ffacb87aafee7e70f959232cb59204.jpg"
@@ -292,12 +292,12 @@ a:hover {
 </div>
 
   </div>
-  <!-- /.row -->
+  
 
   
  <div class="container py-5">
 
-  <!-- Walter -->
+ 
   <hr class="featurette-divider">
 
   <div class="row featurette align-items-center">
@@ -321,7 +321,7 @@ a:hover {
     </div>
   </div>
 
-  <!-- Skyler -->
+  
   <hr class="featurette-divider">
 
   <div class="row featurette align-items-center">
@@ -345,7 +345,7 @@ a:hover {
     </div>
   </div>
 
-  <!-- Jesse -->
+  
   <hr class="featurette-divider">
 
   <div class="row featurette align-items-center">
@@ -369,7 +369,7 @@ a:hover {
     </div>
   </div>
 
-  <!-- Hank -->
+  
   <hr class="featurette-divider">
 
   <div class="row featurette align-items-center">
@@ -393,7 +393,7 @@ a:hover {
     </div>
   </div>
 
-  <!-- Brain Rot -->
+  
   <hr class="featurette-divider">
 
   <div class="row featurette align-items-center">
@@ -441,13 +441,13 @@ a:hover {
     music.muted = false;
     music.volume = 0.3;
     music.play().catch(() => {
-      // browser blocked it silently
+      
     });
   }, 1000);
 
   const btn = document.getElementById("muteBtn");
 
-  // Unmute on first scroll (no button click needed)
+ 
   window.addEventListener("scroll", () => {
     music.muted = false;
     music.volume = 0.25;
@@ -455,7 +455,7 @@ a:hover {
     btn.textContent = "🔊";
   }, { once: true });
 
-  // Toggle mute anytime
+
   btn.addEventListener("click", () => {
     music.muted = !music.muted;
     btn.textContent = music.muted ? "🔇" : "🔊";
@@ -465,8 +465,6 @@ a:hover {
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
