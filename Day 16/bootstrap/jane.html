@@ -47,6 +47,23 @@
   break-inside: avoid;
 }
 
+  .audio{
+      display:none;
+    }
+  .mute-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0.8;
+}
 
 </style>
 <body>
@@ -74,6 +91,45 @@
   <img src="jessi.jpg">
   <img src="jane2.jpg">
 </div>
+<div class="audio">
+<audio autoplay muted loop id="bgMusic">
+  <source src="jesse_pinkmans_tone.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<button id="muteBtn" class="mute-btn">🔇</button>
+
+<audio id="bgMusic" autoplay muted loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("bgMusic");
+
+  setTimeout(() => {
+    music.muted = false;
+    music.volume = 0.3;
+    music.play().catch(() => {
+     
+    });
+  }, 1000);
+
+  const btn = document.getElementById("muteBtn");
+
+  // Unmute on first scroll (no button click needed)
+  window.addEventListener("scroll", () => {
+    music.muted = false;
+    music.volume = 0.25;
+    music.play();
+    btn.textContent = "🔊";
+  }, { once: true });
+
+  // Toggle mute anytime
+  btn.addEventListener("click", () => {
+    music.muted = !music.muted;
+    btn.textContent = music.muted ? "🔇" : "🔊";
+  });
+</script>
 
 </body>
 </html>
