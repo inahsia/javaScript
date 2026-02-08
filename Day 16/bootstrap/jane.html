@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <title>Document</title>
+</head>
+<style>
+  body {
+  background: #111;
+  padding: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.heading{
+  color: aliceblue;
+}
+
+.masonry {
+  column-count: 3;
+  column-gap: 15px;
+}
+
+.masonry img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  break-inside: avoid;
+}
+
+
+</style>
+<body>
+    <div class="d-flex justify-content-center" style="height:500px ;">
+  <img src="walter cry.jpg" alt="">
+  </div>
+      <div class="d-flex justify-content-center" style="height:300px ;">
+  <img src="arrow.jpg" alt="">
+  </div>
+  
+  <div>
+  
+  </div>
+  
+</div>
+ 
+<div class="masonry">
+  <img src="jane.jpg">
+  <img src="jane with jessi.jpg">
+  <img src="jane with purple.jpg">
+
+
+  <img src="jessi and jane.jpg">
+  <img src="jessi shock.jpg">
+  <img src="jessi.jpg">
+  <img src="jane2.jpg">
+</div>
+
+</body>
+</html>
