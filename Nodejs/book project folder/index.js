@@ -1,9 +1,7 @@
 import express from 'express';
 import pino from 'pino';
-
 import dotenv from 'dotenv';
-import pinoHttp from 'pino-http';
-import PinoPretty  from 'pino-pretty';
+import pino from 'pino';
 dotenv.config();
 
 const app=express();
@@ -11,12 +9,7 @@ const port=process.env.PORT;
 
 console.log('envireonment',process.env.Node_env);
 
-const logger = pino({
-  level: 'trace',
-  transport: process.env.NODE_ENV !== 'production'
-    ? { target: 'pino-pretty' }
-    : undefined
-});
+const logger = pino();
 
 app.get('/', (req, res) => {
   logger.info('Home route accessed');
