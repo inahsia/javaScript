@@ -28,7 +28,7 @@ fetchData((data) => {
 // what is callback hell
 setTimeout(()=>{
   console.log("step 1");
-  setTimeout(()={
+  setTimeout(()=>{
     console.log("step 2");
     setTimeout(()=>{
       console.log("step 3");
