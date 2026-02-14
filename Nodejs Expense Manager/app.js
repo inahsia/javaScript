@@ -1,47 +1,26 @@
-const fs=require("fs");
+import pino from 'pino'
+import morgan from 'morgan'
+import express from 'express'
+import dotenv from 'dotenv'
+import expenseRouter from  './router/expenseRouter.js'
+const app=express();
 
-const file="expense.json"
-function loadExpenses(file){
-  try{
-    const data=fs.readFileSync(file);
-    return JSON.parse(data);
-  }
-  catch{
-    return []
-  }
+const logger=pino();
+app.use(express.json());
+app.use(morgan("combined"));
+dotenv.config();
+const port =process.env.PORT;
 
-}
 
-function saveExpenses(expenses){
-  fs.writeFileSync(file,JSON.stringify(expenses));
-}
+app.use('/',expenseRouter);
 
-function addExpenses(title,amount){
-  const expenses=loadExpenses();
-  const newExpenses={
-    id:Date.now(),
-    title,
-    amount:Number(amount)
-  }
-  expenses.push(newExpenses);
-  saveExpenses(expenses);
-  console.log("expenses are saved");
-  
-}
+app.use((err, req, res, next) => {
+  logger.error(err.message);
+  res.status(400).json({ error: err.message });
+});
 
-function listAllExpenses(){
-  const expenses=loadExpenses();
-  if(expenses.length=== 0){
-    console.log('no expenses are listed');
-    return 
-  }
 
-    expenses.forEach(e => {
-      console.log(`${e.id} items : ${e.title} with amount ${e.amount}`);
-    });
-  
-}
-
-// addExpenses("apple",1);
-listAllExpenses();
+app.listen(port,()=>{
+  console.log(`this is port ${port}`);
+})
 
