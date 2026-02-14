@@ -3,6 +3,7 @@ import { expenses, counterFn } from "../expenses.js";
 export const addTask = (router) => {
 router.post('/', (req, res, next) => {
   const { item, expense } = req.body;
+  console.log(req.body);
   if (!item || expense === undefined) {
     return next(new Error('Please add item name and expense'));
   }

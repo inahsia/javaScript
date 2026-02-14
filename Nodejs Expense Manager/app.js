@@ -7,7 +7,7 @@ const app=express();
 
 const logger=pino();
 app.use(express.json());
-app.use(morgan("combined"));
+app.use(morgan("moragn"));
 dotenv.config();
 const port =process.env.PORT;
 
