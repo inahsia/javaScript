@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import { AppError } from '../middleware/error.js';
+import { AppError,notFound} from '../middleware/error.js';
 import {counterFn,database} from '../stores.js'
 const router = Router();
 
@@ -39,7 +39,7 @@ router.get('/',(req,res,next)=>{
 
   const pagination=data.slice(start,end);
   if(pagination.length===0){
-    return next(new AppError('no data found'));
+   return next(new AppError('no data found'));
   }
 
   res.status(200).json({
@@ -79,6 +79,8 @@ router.delete('/:id',(req,res)=>{
     delete database[id];
     res.status(204).json({mess:"there is a massive error"});
 })
+
+
 
 
 export const userController = router;

@@ -8,7 +8,7 @@ import { fileMiddleware,customMiddlerware } from './middlewares/logger.js';
 dotenv.config();
 const port=process.env.PORT || 3000;
 const app=express();
-app.use(morgan('dev'))
+app.use(morgan(":method :url :status :response-time ms"));
 app.use(fileMiddleware);
 app.use(customMiddlerware);
 app.use(express.json());

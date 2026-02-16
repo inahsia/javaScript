@@ -2,17 +2,17 @@ import pino from 'pino'
 import morgan from 'morgan'
 import express from 'express'
 import dotenv from 'dotenv'
-import expenseRouter from  './router/expenseRouter.js'
+import router from './router/expenseRouter.js'
 const app=express();
 
 const logger=pino();
 app.use(express.json());
-app.use(morgan("moragn"));
+app.use(morgan("dev"));
 dotenv.config();
 const port =process.env.PORT;
 
 
-app.use('/',expenseRouter);
+app.use('/',router);
 
 app.use((err, req, res, next) => {
   logger.error(err.message);

@@ -1,6 +1,7 @@
 import { expenses, counterFn } from "../expenses.js";
+import {Router} from 'express'
 
-export const addTask = (router) => {
+const router=Router();
 router.post('/', (req, res, next) => {
   const { item, expense } = req.body;
   console.log(req.body);
@@ -13,14 +14,14 @@ router.post('/', (req, res, next) => {
   res.status(201).json(task);
 });
 
-};
 
-export const getExpenses=(router)=>{router.get('/',(req,res)=>{
+
+router.get('/',(req,res)=>{
   res.json(Object.values(expenses));
-})};
+})
 
 
-export const getTask = (router) => {
+
   router.get('/:id', (req, res, next) => {
     const id = req.params.id;
     const expense = expenses[id];
@@ -29,9 +30,9 @@ export const getTask = (router) => {
     }
     res.json(expense);
   });
-};
 
-export const updateTask=(router)=>{
+
+
   router.put('/:id',(req,res,next)=>{
     const id =req.params.id;
     const list=expenses[id];
@@ -42,9 +43,9 @@ export const updateTask=(router)=>{
     if(expense!==undefined) list.expense=expense
     res.status(204).json(list);
   })
-}
 
-export const  deleteTask=(router)=>{
+
+
   router.delete('/:id',(req,res,next)=>{
     const id=req.params.id;
     
@@ -52,4 +53,5 @@ export const  deleteTask=(router)=>{
     delete expenses[id];
     res.status(204).json({mess:"deleted!"})
   })
-}
+
+  export const userController=router

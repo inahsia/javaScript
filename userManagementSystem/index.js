@@ -7,7 +7,7 @@ import {notFound} from './middleware/error.js'
 dotenv.config();
 const port=process.env.port || 3000
 const app=express();
-app.use(morgan('combined'))
+app.use(morgan(":method :url :status :response-time ms"))
 app.use(express.json());
 
 
