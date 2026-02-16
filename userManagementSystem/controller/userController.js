@@ -66,7 +66,7 @@ router.put('/:id',(req,res)=>{
       const data=database[id];
       const {name,email,role}=req.body;
       if (name!==undefined) {data.name=name};
-      if(email!==undefined){data.email=email};
+      if (email!==undefined){data.email=email};
       if (role!==undefined){data.role=role}; 
   
       res.status(204).json(data);
