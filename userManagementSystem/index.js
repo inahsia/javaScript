@@ -2,7 +2,6 @@ import express from 'express'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
 import router from './routes/routes.js'
-import {errorHandler} from './middleware/error.js'
 import {notFound} from './middleware/error.js'
 dotenv.config();
 const port=process.env.port || 3000
@@ -15,7 +14,7 @@ app.use('/',router);
 
 
 app.use(notFound);
-app.use(errorHandler);
+
 
 
 

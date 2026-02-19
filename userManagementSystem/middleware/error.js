@@ -12,10 +12,12 @@ export const notFound=(req,res,next)=>{
   });
 };
 
-export const errorHandler=(err,req,res,next)=>{
-  console.log("Error",err.message);
-  res.status(err.status || 500).json({
-    success:false,
-    error:err.message ||"server Error"
-  });
+
+
+export const asyncHandler = (fn) => {
+  return (req, res, next) => {
+    Promise.resolve(fn(req, res, next)).catch(next);
+  };
 };
+
+
