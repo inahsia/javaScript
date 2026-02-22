@@ -1,0 +1,16 @@
+{
+  "name": "practicemongodb",
+  "version": "1.0.0",
+  "main": "db_practice_file.js",
+  "type":"module",
+  "scripts": {
+    "start": "node db_practice_file.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "mongoose": "^9.2.1"
+  }
+}
