@@ -301,6 +301,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ["admin", "user"],
     default: "user"
+  },
+  _id:{
+    default:Null
   }
 
 }, { timestamps: true });
@@ -316,3 +319,112 @@ db.users.createIdex({email:1})
 //-1->descending
 
 db.users.createIndex({age:1,city:1})
+
+// ============================================================================================================================================================================================================================================================================================================================================================
+
+
+import mongoose from 'mongoose'
+const userSchema=new mongoose.Schema({
+  name:string,
+  age:Number,
+  email:String
+})
+
+// real schema
+
+name:{
+  type:String,
+  required:true
+},
+age:{
+  type:Number,
+  min:18
+},
+email:{
+  type:String,
+  required:true,
+  unique:true
+}
+
+role:{
+  type:String,
+  enum:["user","admin"],
+  default:"user"
+}
+//now i am going to make model
+const User=mongoose.model("User",userSchema);
+
+
+// ======================================================================================
+
+const userSchema=new mongoose.Schema({
+  username:String,
+  required:true,
+  minlength:3,
+  maxlength:20,
+  trim:true
+},
+
+email:{
+  type:string,
+  required:true,
+  unique:true,
+  lowercase:true,
+  match:/^\S+@\S+\.\S+$/
+},
+password:{
+  type:String,
+  required:true,
+  minlength:6
+},
+role:{
+  string:String,
+  enum:["user","admin","moderator"],
+  default:"user"
+},
+createdAt:{
+  type:Date,
+  default:Date.now
+}
+
+)
+
+// ====================================================================================
+//Product Schema
+title:{
+  type:String,
+  required:true,
+  trim:true
+},
+price:{
+  type:Number,
+  required:true,
+  min:1
+},
+category:{
+  type:String,
+  enum:["electronics","clothing","books","food"]
+
+},
+stocks:{
+  type:Number,
+  default:0,
+  min:0,
+}
+
+stock:{
+  type:Number,
+  default:0,
+  min:0
+}
+
+password:{
+  type:String,
+  required:true,
+  validate:{
+    validator:function(value){
+      return /^(?=.*[A-Za-z])(?=.*\d)/.test(value);
+    },
+    message:"Password must contain at least one letter and one number"
+  }
+}

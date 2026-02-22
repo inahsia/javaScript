@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/books', async (req, res) => {
   try {
     const { name, email, password } = req.body;
     const existingUser = await user.findOne({ email });
@@ -13,7 +13,6 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ message: "email exists" });
     }
 
-    // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const User = await user.create({
@@ -33,4 +32,18 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/books/:id',async(req,res)=>{
+  try{
+    const id=req.params.id;
+    if (!id) {
+      
+    }
+   
+
+  }
+  catch(err){
+      return next(new Error("this is a new error bro "));
+  }
+}
+)
 export const userRoute = router;

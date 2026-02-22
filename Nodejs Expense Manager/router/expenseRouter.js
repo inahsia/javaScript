@@ -7,4 +7,5 @@ const router=express.Router();
 router.use('/',userController)
 
 
+
 export default router;;
