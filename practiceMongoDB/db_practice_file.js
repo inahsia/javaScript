@@ -3,42 +3,18 @@
 // https://chatgpt.com/share/699af18e-7ab0-800b-a988-172abd0aca12
 
 
-/*
-=========================================
-MONGOOSE CRUD REVISION FILE
-=========================================
 
-HOW TO USE:
-
-1. Paste this file
-2. Put your MongoDB connection string
-3. Uncomment ONE query at a time
-4. Run: node mongoose_revision.js
-
-This file covers:
-
-- insert
-- find / projection
-- comparison operators
-- logical operators
-- array queries
-- sorting + pagination
-- updates
-- delete
-
-=========================================
-*/
 
 import mongoose from "mongoose";
 
-/* ---------- CONNECT DATABASE ---------- */
+
 
 await mongoose.connect("mongodb+srv://admin:admin@cluster0.a9dvost.mongodb.net/?appName=Cluster0");
 
 console.log("Mongo Connected");
 
 
-/* ---------- SCHEMA ---------- */
+
 
 const userSchema = new mongoose.Schema({
   name: String,
@@ -50,10 +26,6 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-
-/* =========================================================
-SECTION 1 — INSERT DOCUMENTS
-========================================================= */
 
 // Insert many users
 
@@ -69,21 +41,21 @@ console.log("Inserted");
 */
 
 
-/* =========================================================
-SECTION 2 — BASIC FIND
-========================================================= */
+
+// SECTION 2 — BASIC FIND
+
 
 // Get all users
-/*
-const data = await User.find();
-console.log(data);
-*/
+
+// const data = await User.find();
+// console.log(data);
+
 
 // Find one user
-/*
+
 const rahul = await User.findOne({name:"Rahul"});
 console.log(rahul);
-*/
+
 
 
 /* =========================================================
@@ -118,8 +90,7 @@ console.log(await User.find({role:{$ne:"dev"}}));
 
 // role in list
 /*
-console.log(await User.find({role:{$in:["dev","intern"]}}));
-*/
+console.log(await User.find({role:{$in:["dev","intern
 
 
 /* =========================================================
@@ -127,12 +98,14 @@ SECTION 5 — LOGICAL OPERATORS
 ========================================================= */
 
 // age>20 AND salary>4500
-/*
-console.log(await User.find({
-  age:{$gt:20},
-  salary:{$gt:4500}
-}));
-*/
+
+// console.log(await User.find({
+//   $and:[
+//   {age:{$gt:20}},
+//   {salary:{$gt:4500}}
+// ]
+// }));
+
 
 // role dev OR manager
 /*
@@ -145,9 +118,10 @@ console.log(await User.find({
 */
 
 
-/* =========================================================
-SECTION 6 — ELEMENT OPERATORS
-========================================================= */
+/* ========================================================="]}}));
+*/
+// SECTION 6 — ELEMENT OPERATORS
+// ========================================================= */
 
 // salary field exists
 /*
@@ -247,17 +221,17 @@ SECTION 11 — DELETE
 ========================================================= */
 
 // delete Rahul
-/*
-await User.deleteOne({name:"Rahul"});
-*/
 
-// delete all interns
-/*
-await User.deleteMany({role:"intern"});
-*/
+// await User.deleteOne({name:"Rahul"});
 
-/*now we are on indexes
-*/
+
+// // delete all interns
+
+// await User.deleteMany({role:"intern"});
+
+
+// /*now we are on indexes
+// */
 
 // userSchema.index({email:1});
 //  or 
@@ -277,13 +251,13 @@ await User.deleteMany({role:"intern"});
 // //salary
 // userSchema.index({role:1,salary:-1})
 
-// /* ========================================================= */
+// // /* ========================================================= */
 
 
-// //now the concept of pagination 
-// //questions
+// // //now the concept of pagination 
+// // //questions
 
-// //return all developers with salary >5000
+// // //return all developers with salary >5000
 
 // const salary =await User.find({
 //   role:"dev",
@@ -302,13 +276,13 @@ await User.deleteMany({role:"intern"});
 // // there is a concept of skip also came from 
 // // (pages-1)*limit
 
-// const pagination =await User.find().skip(2).limit();
+// // const pagination =await User.find().skip(2).limit();
 
 
-// // Return:
-// // only dev users
-// // sorted by salary descending
-// // page 2 limit 3
+// // // Return:
+// // // only dev users
+// // // sorted by salary descending
+// // // page 2 limit 3
 
 // const concept=await User.find({
 //   role:"dev"
@@ -342,6 +316,139 @@ await User.deleteMany({role:"intern"});
 //  enum:["admin","user","dev"]
 // }
 
-//now staring with the transaction 
+// //now staring with the transaction 
 
+
+// //  Key Queries Recap///
+
+// // Here’s a simple cheat sheet of the queries you’ll use for transactions, atomic operations, and multi-document consistency:
+
+// // Action	Query
+// // Start a session	const session = await mongoose.startSession();
+// // Begin transaction	await session.withTransaction(async () => { ... });
+// // Commit transaction	await session.commitTransaction();
+// // Abort transaction	await session.abortTransaction();
+// // End session	session.endSession();
+// // Increment a field	await Model.updateOne({ _id: id }, { $inc: { field: 10 } });
+// // Push to an array	await Model.updateOne({ _id: id }, { $push: { field: "value" } });
+// // Add unique value to array	await Model.updateOne({ _id: id }, { $addToSet: { field: "value" } });
+// // Set a field	await Model.updateOne({ _id: id }, { $set: { field: "newValue" } });
+// // Remove a field	await Model.updateOne({ _id: id }, { $unset: { field: "" } });
+// // Multiply a field	await Model.updateOne({ _id: id }, { $mul: { field: 2 } });
+// // Rename a field	await Model.updateOne({ _id: id }, { $rename: { oldField: "newField" } });
+// // Update multiple documents	await Model.updateMany({ condition }, { $set: { field: "value" } });
+
+
+
+// // $inc	Increment (or decrement) a numeric value.
+// // $push	Add an element to an array.
+// // $addToSet	Add an element to an array if it’s not already present (ensures uniqueness).
+// // $set	Set a value for a field.
+// // $pull	Remove an element from an array.
+// // $unset	Remove a field from a document.
+// // $mul	Multiply a numeric value.
+
+// //increase user's age 
+// await User.updateOne(
+//   {_id: userId},
+//   {$inc:{age:1}}
+
+// )
+
+// // add skill to User Profile 
+// await User.updateOne(
+//   {_id:userId},
+//   {$addToSet:{skills:"Nodejs"}}
+// );
+
+// //set address for User
+// await User.updateOne({
+//   _id:userId
+// },
+// {$set:{defaultAddress:"123 Main St"
+// }}
+// );
+
+// //remove skill from User Profile 
+// await User.updateOne(
+//   {_id:userId},
+//   {$pull:{skills:"javaScript"}}
+// )
+
+// // increment product's Stocks after sale
+// await User.updateOne(
+//   {_id:productId},
+//   {$inc:{stock:10}}
+// )
+
+// //add a new reviews to  product
+// await User.updateOne(
+//   {_id:productId},
+//   {$push:{reviews:"great product!"}}
+// ) ;
+
+// //update Users profile pictures 
+// await User.updateOne(
+//   {_id:userId},
+//   {$set:{profilePicture:"newImage.jpg"}}
+// );
+
+// //decrease product price if discount applied
+// await User.updateOne(
+//   {_id:productId},
+//   {$mul:{price:0.8}}
+// )
+
+// await User.updateOne(
+//   {_id:userId},
+//   {$unset:{defaultAddress:""}}
+// );
+// await User.updateOne(
+//   { _id: cartId },
+//   { $addToSet: { items: productId } }
+// );
+
+
+
+
+
+
+
+
+// now i will start with mongoose and its queries
+
+// insertOne()
+// return type is Promise<insertOneResult>
+// {
+//   acknowledged: true,
+//   insertedId: ObjectId("...")
+// }
+
+const userSchema=new mongoose.Schema({
+------------
+})
+const user=mongoose.model("user",userSchema);
+await user.create({name:"aishani",age:22})
+
+
+
+const studentSchema=new mongoose.Schema({
+  name:string,
+  exams:[
+    {
+      subject :String,
+      score:Number,
+      passed:Boolean
+    }
+  ]
+});
+
+user.find({
+  exams:{
+    $elemMatch:{
+      score:{$lt:50},
+      passed:false
+    }
+  }
+})
 
