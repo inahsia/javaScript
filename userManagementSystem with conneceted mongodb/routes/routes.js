@@ -3,7 +3,7 @@ import express from 'express'
 
 const router=express.Router();
 
-router.use('/',  userController);
+router.use('/', userController);
 
 
 

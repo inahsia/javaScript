@@ -1,9 +1,10 @@
 {
-  "name": "usermanagementsystem",
+  "name": "jwtauthentication",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "type": "module",
   "keywords": [],
@@ -11,13 +12,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
-    "joi": "^18.0.2",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.2.1",
-    "morgan": "^1.10.1",
-    "pino": "^10.3.1"
+    "jsonwebtoken": "^9.0.3"
   }
 }

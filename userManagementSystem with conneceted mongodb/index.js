@@ -14,7 +14,7 @@ app.use(morgan(":method :url :status :response-time ms"))
 app.use(express.json());
 
 
-app.use('/',router);
+app.use('/api',router);
 
 
 app.use(notFound);
