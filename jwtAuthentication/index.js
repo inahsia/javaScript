@@ -25,8 +25,6 @@ app.post('/register', async (req, res) => {
   res.json({ message: "User registered successfully" });
 });
 
-
-
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -34,20 +32,15 @@ app.post("/login", async (req, res) => {
   if (!user) {
     return res.status(400).json({ message: "Invalid" });
   }
-
-
   const match = await bcrypt.compare(password, user.password);
   if (!match) {
     return res.status(400).json({ message: "Invalid" });
   }
-
-
   const token = jwt.sign(
     { email: user.email },
     SECRET,
     { expiresIn: "1h" }
   );
-
   res.json({ token });
 });
 
@@ -59,15 +52,11 @@ app.get('/profile',verifyToken, (req, res) => {
   });
 });
 
-
 function verifyToken(req, res, next) {
-
   const token = req.headers.authorization?.split(" ")[1];
-
   if (!token) {
-    return res.status(403).json({ message: "No token was provided" });
+    return res.status(403).json({ message: "No token " });
   }
-
   try {
     const decoded = jwt.verify(token, SECRET);
     req.user = decoded;
@@ -77,7 +66,6 @@ function verifyToken(req, res, next) {
     res.status(401).json({ message: "invalid token" });
   }
 }
-
 
 app.listen(PORT, () => {
   console.log(`Server running on Port ${PORT}`);
