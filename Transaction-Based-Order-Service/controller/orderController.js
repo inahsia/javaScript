@@ -15,7 +15,7 @@ export const orderController = async (req, res) => {
     });
 
   } catch (err) {
-    console.error("REAL ERROR:", err.message);
+    console.error("Real Error", err.message);
 
     res.status(400).json({
       message: err.message
