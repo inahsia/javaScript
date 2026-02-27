@@ -28,13 +28,13 @@ app.post('/register', async (req, res) => {
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
-  const user = users.find(e => e.email === email);
+  const user = users.find(e =>e.email === email);
   if (!user) {
-    return res.status(400).json({ message: "Invalid" });
+    return res.status(400).json({message: "Invalid"});
   }
   const match = await bcrypt.compare(password, user.password);
   if (!match) {
-    return res.status(400).json({ message: "Invalid" });
+    return res.status(400).json({message: "Invalid"});
   }
   const token = jwt.sign(
     { email: user.email },
