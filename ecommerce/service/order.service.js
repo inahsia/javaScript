@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 import Product from '../models/product.js'
 import Order from '../models/order.js'
-
 export const placeOrder = async (userId, items) => {
 
   const session = await mongoose.startSession();
