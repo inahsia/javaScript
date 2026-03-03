@@ -22,7 +22,7 @@ export const tokenVerification=async(token)=>{
   }
 }
 
-export const middleware=async(req,res,next)=>{
+export const  middleware=async(req,res,next)=>{
   const token=req.headers.authorization?.split(" ")[1];
   if(!token){
     return new Error("not valid token");

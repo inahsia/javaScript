@@ -3,7 +3,5 @@ import {userController} from '../controller/userController.js'
 const router=express.Router();
 
 router.use('/',userController);
-
-
-
+  
 export const userRoute=router;
