@@ -12,6 +12,7 @@ app.use(express.json())
 
 const users=[];
 
+
 app.post('/register',async(req,res)=>{
   const {username,password}=req.body;
   const userExists=users.find(u=>u.username===username);
@@ -28,7 +29,8 @@ app.post('/register',async(req,res)=>{
 });
 
 // socket middleware
-io.use(async(socket,next)=>{
+const chatNamespace=io.of('/chat');
+chatNamespace.use(async(socket,next)=>{
   const {username,password}=socket.handshake.auth;
   const user=users.find(u=>u.username===username);
   if(!user){
@@ -44,16 +46,16 @@ io.use(async(socket,next)=>{
 
 });
 //socket connection
-io.on("connection",(socket=>{
+chatNamespace.on("connection",(socket=>{
   console.log("User connected",socket.username);
   socket.on("joinRoom",(room)=>{
     socket.join(room);
     socket.room=room;
-    io.to(room).emit("message",`${socket.username} joined ${room}`);
+    chatNamespace.to(room).emit("message",`${socket.username} joined ${room}`);
   });
 
   socket.on("chatMessage",(msg)=>{
-    io.to(socket.room).emit(
+    chatNamespace.to(socket.room).emit(
       "message",`${socket.username}:${msg}`
     );
   });

@@ -9,7 +9,7 @@
 
 <div id="chat" style="display:none;">
   <ul id="messages"></ul>
-  <input id="msg" placeholder="Type message..." />
+  <input id="msg" placeholder="Type message" />
   <button onclick="sendMessage()">Send</button>
 </div>
 
@@ -36,7 +36,7 @@
     const password = document.getElementById("password").value;
     const room = document.getElementById("room").value;
 
-    socket = io({
+    socket = io("/chat",{
       auth: { username, password }
     });
 

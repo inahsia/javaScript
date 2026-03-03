@@ -28,7 +28,7 @@ export const createUser=async(body)=>{
     password:hashedPassword,
     role
   });
-  const token=generateToken(user)
+
   return {user,token};
 }
 
