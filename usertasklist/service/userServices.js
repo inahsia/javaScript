@@ -3,66 +3,101 @@ import bcrypt from 'bcryptjs'
 import {User} from '../model/user.js'
 import {Task} from '../model/task.js'
 import {generateToken} from '../middleware/auth.js'
-export const register=async(body)=>{
+
+export const register = async (body) => {
+  try {
+    const { name, email, password} = body;
+    if (!name || !email || !password) {
+      throw new Error("Name, email and password are required");
+    }
+
+   
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      throw new Error("User already exists");
+    }
+
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+
+    const user = await User.create({
+      name,
+      email,
+      password: hashedPassword
+  
+    });
+
+    return user;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const login = async (body) => {
+  try {
+    const { email, password } = body;
+
+    if (!email || !password) {
+      throw new Error("Email and password are required");
+    }
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new Error("User not registered");
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      throw new Error("Invalid password");
+    }
+
+    const token = generateToken(user.email,user._id);
+
+    return {
+      user,
+      token,
+    };
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const addtask=async(body,userId)=>{
   try{
-  const {name,email,password}=body;
-  if (!name || !email || !password){
-    throw new Error("add name,email and password");
+  const {title,description,completed,pending}=body;        //user}
+  if(!title || !description){
+    throw new Error("please enter all fields");
   }
-  const existingUser=await User.findOne({email});
-  if(existingUser){
-    throw new Error("already exists");
-  }
-  const hashpassword=await bcrypt.hash(password,10);
-  const user=await User.create({
-    name,
-    password:hashpassword,
-    email
+  const value=await Task.create({
+    title,description,completed,pending,
+    user: userId 
+
   })
-  return user;
-  }
-  catch(error){
-    console.log(error.message);
-  }
-}
-
-export const login =async(body)=>{
-   try{
-  const {email,password}=body;
-  if (!email || !password){
-    throw new Error("add name and password");
-  }
-  const exists=await User.findOne({email});
-  if(!exists){
-    throw new Error("need to register");
-  }
-  const verifypassword=await bcrypt.compare(password, exists.password);
-
-    if (!verifypassword) {
-    throw new Error("Invalid password");
-  }
-   const token= generateToken(email);
-
-
-  return {
-    exists,token};
+return value;
   }
   catch(error){
     console.error(error.message);
   }
 }
 
-export const addtask=async(body,userId)=>{
-  const {title,description,completed,user}=body;
-  if(!title || !description){
-    throw new Error("please enter all fields");
-  }
-  const value=await Task.create({
-    title,description,completed,user:userId
 
-  })
-return value;
-}
+// export const addtask=async(body,userId)=>{
+//   try{
+//   const {title,description,completed,pending}=body;        //user}
+//   if(!title || !description){
+//     throw new Error("please enter all fields");
+//   }
+//   const value=await Task.create({
+//     title,description,completed,pending,user:userId
+
+//   })
+// return value;
+//   }
+//   catch(error){
+//     console.error(error.message);
+//   }
+// }
 
 export const gettask=async(id)=>{
  
@@ -70,10 +105,9 @@ export const gettask=async(id)=>{
   return user;
 }
 
-export const getAllTask=async()=>{
- 
-  const user=await Task.find();
-  return user;
+export const getAllTask = async (userId) => {
+  const tasks = await Task.find({ user: userId })
+  return tasks
 }
 
 export const updateId=async(id,body)=>{
@@ -90,8 +124,7 @@ export const updateId=async(id,body)=>{
 
 export const deleteValue=async(id)=>{
 
-  const user=await Task.findByIdAndDelete(id
-  );
+  const user=await Task.findByIdAndDelete(id);
   return user;
 }
 
