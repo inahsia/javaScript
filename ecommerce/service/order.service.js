@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import Product from '../models/product.js'
 import Order from '../models/order.js'
+
 export const placeOrder = async (userId, items) => {
 
   const session = await mongoose.startSession();
@@ -31,7 +32,6 @@ export const placeOrder = async (userId, items) => {
         throw new Error("Product not found or insufficient stock");
       }
 
-
       orderItems.push({
         product: product._id,
         name: product.name,
@@ -42,12 +42,12 @@ export const placeOrder = async (userId, items) => {
       totalAmount += product.price * item.quantity;
     }
 
-
     const order = await Order.create(
       [{
         user: userId,
         items: orderItems,
-        totalAmount
+        totalAmount,
+        status: "paid" 
       }],
       { session }
     );

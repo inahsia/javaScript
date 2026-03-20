@@ -3,6 +3,7 @@ import Product from '../models/product.js';
 import { error } from 'console';
 
 export const createProduct=async(body)=>{
+  try{
     const {name,description,category, price,stock}=body;
     const existingItem=await Product.findOne({name});
     if (existingItem){
@@ -12,6 +13,10 @@ export const createProduct=async(body)=>{
       name,description,category, price,stock
     })
     return user;
+  }
+  catch(error){
+    console.log("error");
+  }
 }
 
 export const readProduct=async(page=1,limit=2)=>{

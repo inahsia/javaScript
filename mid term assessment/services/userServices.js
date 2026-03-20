@@ -12,7 +12,7 @@ export const register=async(body)=>{
     throw new Error("please fill complete credentials");
   }
   const existsingUser=await User.findOne({email});
-  if(!existsingUser){
+  if(existsingUser){
     throw new Error('the user already exists');
   }
   const hashedPassword=await bcrypt.hash(password,10);

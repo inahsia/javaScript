@@ -21,8 +21,6 @@
 // rest operator and nullish operator
 
 
-
-
 // greeetUser
 function greetUser(name,callback){
   console.log(`hello ${name}`);
@@ -112,7 +110,7 @@ async function thepost(){
   console.log(b);
 }
 
-======================================================================
+=====================================================================
 function user(callback){
   setTimeout(()=>{
    callback();

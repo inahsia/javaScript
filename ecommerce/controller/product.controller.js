@@ -5,9 +5,9 @@ import { authorize } from '../middleware/role.middleware.js';
 import { validate } from '../middleware/validate.middleware.js';
 import {createProductSchema } from '../validation/product.validation.js'
 const router=express.Router();
+// protect,authorize("admin"),validate(createProductSchema),
 
-router.post('/',protect,authorize("admin"),validate(createProductSchema),async(req,res,next)=>{
-
+router.post('/',async(req,res,next)=>{
 const user=await productService.createProduct(req.body);
 res.status(201).json({
   "message":"created",

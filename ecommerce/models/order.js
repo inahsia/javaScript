@@ -1,55 +1,52 @@
-import mongoose from 'mongoose'
-import Product from './product.js'
-import User from './user.js'
-const orderItemsSchema=new mongoose.Schema({
-  product:{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:"Product",
-    required:true
+import mongoose from 'mongoose';
+
+const orderItemSchema = new mongoose.Schema({
+  product: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Product',
+    required: true
   },
-  name:{
-    type:String,
-    required:true
+  quantity: {
+    type: Number,
+    required: true,
+    min: 1
   },
-  price:{
-    type:Number,
-    required:true
-  },
-  quantity:{
-    type:Number,
-    required:true,
-    min:1
+  price: {
+    type: Number,
+    required: true
   }
-},{timestamps:true},{_id:false})
+});
 
-const orderSchema = new mongoose.Schema(
-  {
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-      index: true
-    },
-
-    items: {
-      type: [orderItemsSchema],
-      validate: v => v.length > 0
-    },
-
-    totalAmount: {
-      type: Number,
-      required: true,
-      min: 0
-    },
-
-    status: {
-      type: String,
-      enum: ["pending", "paid", "cancelled", "shipped", "delivered"],
-      default: "pending",
-      index: true
-    }
+const orderSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   },
-  { timestamps: true }
-);
 
-export default mongoose.model("Order", orderSchema);
+  items: [orderItemSchema],
+
+  totalAmount: {
+    type: Number,
+    required: true
+  },
+
+  paymentId: {
+    type: String
+  },
+
+  paymentStatus: {
+    type: String,
+    enum: ['pending', 'paid', 'failed'],
+    default: 'pending'
+  },
+
+  orderStatus: {
+    type: String,
+    enum: ['placed', 'shipped', 'delivered', 'cancelled'],
+    default: 'placed'
+  }
+
+}, { timestamps: true });
+
+export default mongoose.model('Order', orderSchema);
